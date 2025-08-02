@@ -1,122 +1,173 @@
-<h1 align="center">
-  <a href="https://openbas.io"><img src="./.github/img/logo_openbas.png" alt="OpenBAS"></a>
-</h1>
-<p align="center">
-  <a href="https://openbas.io" alt="Website"><img src="https://img.shields.io/badge/website-openbas.io-blue.svg" /></a>
-  <a href="https://docs.openbas.io" alt="Documentation"><img src="https://img.shields.io/badge/documentation-latest-orange.svg" /></a>
-  <a href="https://community.filigran.io" alt="Slack"><img src="https://img.shields.io/badge/slack-3K%2B%20members-4A154B" /></a>
-  <a href="https://drone.filigran.io/OpenBAS-Platform/openbas"><img src="https://drone.filigran.io/api/badges/OpenBAS-Platform/openbas/status.svg" /></a>
-  <a href="https://codecov.io/gh/OpenBAS-Platform/openbas"><img src="https://codecov.io/gh/OpenBAS-Platform/openbas/graph/badge.svg" /></a>
-  <a href="https://deepscan.io/dashboard#view=project&tid=11710&pid=14631&bid=276803"><img src="https://deepscan.io/api/teams/11710/projects/14631/branches/276803/badge/grade.svg" alt="DeepScan grade"></a>
-  <a href="https://hub.docker.com/u/openbas" alt="Docker pulls"><img src="https://img.shields.io/docker/pulls/openbas/platform" /></a>
-</p>
+# Клиническая эндокринология - Справочник для врачей
 
-## Introduction
+Современное веб-приложение для врачей-эндокринологов с актуальными клиническими рекомендациями РФ.
 
-OpenBAS is an open source platform allowing organizations to plan, schedule and conduct cyber adversary simulation
-campaign and tests.
+## 🎯 Описание
 
-![Screenshot](./.github/img/screenshot.png "Screenshot")
+Данное приложение представляет собой комплексный справочник по клинической эндокринологии, содержащий:
 
-## Objective
+- **Клинические рекомендации РФ** - актуальные протоколы диагностики и лечения
+- **Лабораторные исследования** - нормальные значения и интерпретация результатов
+- **Схемы лечения** - современные протоколы терапии с дозировками и мониторингом
+- **Интерактивный интерфейс** - удобный поиск и навигация
 
-The goal is to create a powerful, reliable and open source tool to effectively plan and play all types of simulations,
-training and exercises from the technical level to the strategic one. Also, the platform is able to give you a proper
-overview of any security gaps regarding actual threats with knowledge coming from
-the [OpenCTI platform](https://opencti.io).
+## 🚀 Возможности
 
-OpenBAS aims to respond to these issues, which not only concern state services but also many private organizations. With
-different modules (scenarios, teams, simulations, verification of means of communication, encryption, etc.), the
-platform offers advantages such as collaborative work, real-time monitoring, statistics or the management of feedback.
+### ✅ Реализованные функции
 
-Finally, OpenBAS supports different types of inject, allowing the tool to be integrated with emails, SMS platforms,
-social medias, alarm systems, etc. All currently supported integration can be found in
-the [OpenBAS ecosystem](https://docs.openbas.io/latest/development/injectors/).
+1. **Клинические рекомендации**
+   - Сахарный диабет 1 и 2 типа
+   - Заболевания щитовидной железы
+   - Остеопороз
+   - Ожирение
+   - Поиск и фильтрация по категориям
+   - Уровни доказательности
 
-## Editions of the platform
+2. **Лабораторные исследования**
+   - 12 основных эндокринологических тестов
+   - Нормальные значения
+   - Интерпретация результатов
+   - Сводная таблица
 
-OpenBAS platform has 2 different editions: Community (CE) and Enterprise (EE). The purpose of the Enterprise Edition is
-to provide [additional and powerful features](https://filigran.io/offering/subscribe) which require specific investments
-in research and development. You can enable the Enterprise Edition directly in the settings of the platform.
+3. **Схемы лечения**
+   - 8 основных препаратов
+   - Дозировки и противопоказания
+   - Побочные эффекты
+   - Мониторинг терапии
 
-* OpenBAS Community Edition, licensed under the [Apache 2, Version 2.0 license](LICENSE).
-* OpenBAS Enterprise Edition, licensed under the [Enterprise Edition license](LICENSE).
+4. **Современный интерфейс**
+   - Адаптивный дизайн
+   - Поиск и фильтрация
+   - Интерактивные карточки
+   - Детальные диалоги
 
-To understand what OpenBAS Enterprise Edition brings in terms of features, just check
-the [Enterprise Editions page](https://filigran.io/offering/subscribe) on the Filigran website. You can also try this
-edition by enabling it in the settings of the platform.
+### 🔄 В разработке
 
-## Documentation and demonstration
+- Управление пациентами
+- Клинические случаи
+- Персонализированные рекомендации
+- Интеграция с лабораторными системами
 
-If you want to know more on OpenBAS, you can read the [documentation on the tool](https://docs.openbas.io). If you wish
-to discover how the OpenBAS platform is working, a [demonstration instance](https://demo.openbas.io) is available and
-open to everyone. This instance is reset every night and is based on reference data maintained by the OpenBAS
-developers.
+## 🛠 Технологии
 
-## Releases download
+- **Frontend**: React 18 + TypeScript
+- **UI Framework**: Material-UI (MUI)
+- **Роутинг**: React Router
+- **Стилизация**: Emotion
+- **Сборка**: Create React App
 
-The releases are available on the [Github releases page](https://github.com/OpenBAS-Platform/openbas/releases). You can
-also access the [rolling release package](https://releases.openbas.io) generated from the mater branch of the
-repository.
+## 📦 Установка и запуск
 
-## Installation
+### Предварительные требования
 
-All you need to install the OpenBAS platform can be found in
-the [official documentation](https://docs.openbas.io/latest/deployment/installation/). For installation, you can:
+- Node.js 16+ 
+- npm или yarn
 
-* [Use Docker](https://docs.openbas.io/latest/deployment/installation/#using-docker)
-* [Install manually](https://docs.openbas.io/latest/deployment/installation/#manual-installation)
+### Установка
 
-## Contributing
+```bash
+# Клонирование репозитория
+git clone <repository-url>
+cd endocrine-clinical-app
 
-### Code of Conduct
+# Установка зависимостей
+npm install
 
-OpenBAS has adopted a [Code of Conduct](CODE_OF_CONDUCT.md) that we expect project participants to adhere to. Please
-read the [full text](CODE_OF_CONDUCT.md) so that you can understand what actions will and will not be tolerated.
+# Запуск в режиме разработки
+npm start
+```
 
-### Contributing Guide
+Приложение будет доступно по адресу: http://localhost:3000
 
-Read our [contributing guide](CONTRIBUTING.md) to learn about our development process, how to propose bugfixes and
-improvements, and how to build and test your changes to OpenBAS.
+### Сборка для продакшена
 
-### Beginner friendly issues
+```bash
+npm run build
+```
 
-To help you get you familiar with our contribution process, we have a list
-of [beginner friendly issues](https://github.com/OpenBAS-Platform/openbas/labels/good%20first%20issue) which are
-fairly easy to implement. This is a great place to get started.
+## 📚 Структура проекта
 
-### Development
+```
+src/
+├── components/          # React компоненты
+│   ├── Layout.tsx      # Основной макет
+│   ├── Dashboard.tsx   # Главная страница
+│   ├── GuidelinesList.tsx  # Клинические рекомендации
+│   ├── LabTestsList.tsx    # Лабораторные исследования
+│   ├── TreatmentsList.tsx  # Схемы лечения
+│   ├── PatientsList.tsx    # Пациенты (заглушка)
+│   └── ClinicalCases.tsx   # Клинические случаи (заглушка)
+├── data/               # Данные приложения
+│   ├── clinicalGuidelines.ts  # Клинические рекомендации
+│   ├── labTests.ts     # Лабораторные тесты
+│   └── treatments.ts   # Схемы лечения
+├── types/              # TypeScript типы
+│   └── clinical.ts     # Интерфейсы данных
+└── App.tsx            # Главный компонент
+```
 
-If you want to actively help OpenBAS, we created
-a [dedicated documentation](https://docs.openbas.io/latest/development/environment_ubuntu/) about the
-deployment of a development environment and how to start the source code modification.
+## 🎨 Интерфейс
 
-## Community
+### Главная страница
+- Обзор статистики
+- Быстрый доступ к разделам
+- Последние обновления
 
-### Status & bugs
+### Клинические рекомендации
+- Поиск по названию и описанию
+- Фильтрация по категориям
+- Уровни доказательности (A, B, C, D)
+- Детальный просмотр в диалогах
 
-Currently OpenBAS is under heavy development, if you wish to report bugs or ask for new features, you can directly use
-the [Github issues module](https://github.com/OpenBAS-Platform/openbas/issues).
+### Лабораторные исследования
+- Поиск тестов
+- Нормальные значения
+- Интерпретация результатов
+- Сводная таблица
 
-### Discussion
+### Схемы лечения
+- Поиск препаратов
+- Дозировки и противопоказания
+- Побочные эффекты
+- Мониторинг терапии
 
-If you need support or you wish to engage a discussion about the OpenBAS platform, feel free to join us on
-our [Slack channel](https://community.filigran.io). You can also send us an email to contact@filigran.io.
+## 📋 Источники данных
 
-## About
+Все клинические рекомендации основаны на официальных документах:
 
-### Authors
+- **Минздрав РФ** - клинические рекомендации
+- **Российская ассоциация эндокринологов** - протоколы лечения
+- **Международные стандарты** - лабораторные нормы
 
-OpenBAS is a product designed and developed by the company [Filigran](https://filigran.io).
+## 🔄 Обновления
 
-<a href="https://filigran.io" alt="Filigran"><img src="./.github/img/logo_filigran.png" width="300" /></a>
+Приложение регулярно обновляется в соответствии с новыми клиническими рекомендациями РФ.
 
-### Data Collection
+### Последние обновления
+- Сахарный диабет 2 типа (2023)
+- Заболевания щитовидной железы (2023)
+- Остеопороз (2023)
+- Ожирение (2023)
 
-#### Usage telemetry
+## 🤝 Вклад в проект
 
-To improve the features and the performances of OpenBAS, the platform collects anonymous statistical data related to its
-usage and health.
+Мы приветствуем вклад в развитие проекта:
 
-You can find all the details on collected data and associated usage in
-the [usage telemetry documentation](https://docs.openbas.io/latest/reference/deployment/telemetry/).
+1. Форкните репозиторий
+2. Создайте ветку для новой функции
+3. Внесите изменения
+4. Создайте Pull Request
+
+## 📄 Лицензия
+
+Проект распространяется под лицензией MIT.
+
+## 📞 Поддержка
+
+По вопросам и предложениям обращайтесь:
+- Email: support@endocrinology-app.ru
+- GitHub Issues: [Создать issue](https://github.com/your-repo/issues)
+
+---
+
+**Внимание**: Данное приложение предназначено для медицинских работников и не заменяет профессиональную консультацию врача.
