@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Клиническая эндокринология - Справочник для врачей</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #1976d2, #42a5f5);
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .nav {
+            background: white;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .nav-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .nav-btn {
+            background: #1976d2;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.3s;
+        }
+        
+        .nav-btn:hover {
+            background: #1565c0;
+        }
+        
+        .nav-btn.active {
+            background: #0d47a1;
+        }
+        
+        .content {
+            background: white;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            min-height: 500px;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border-left: 4px solid #1976d2;
+        }
+        
+        .card h3 {
+            color: #1976d2;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .stat-card {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #1976d2;
+        }
+        
+        .search {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .chip {
+            background: #e3f2fd;
+            color: #1976d2;
+            padding: 0.25rem 0.75rem;
+            border-radius: 16px;
+            font-size: 0.875rem;
+            margin: 0.25rem;
+            display: inline-block;
+        }
+        
+        .guideline {
+            border-left: 4px solid #4caf50;
+        }
+        
+        .treatment {
+            border-left: 4px solid #ff9800;
+        }
+        
+        .lab-test {
+            border-left: 4px solid #9c27b0;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            .nav-buttons {
+                flex-direction: column;
+            }
+            
+            .stats {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🏥 Клиническая эндокринология</h1>
+        <p>Справочник для врачей с клиническими рекомендациями РФ</p>
+    </div>
+    
+    <div class="container">
+        <div class="nav">
+            <div class="nav-buttons">
+                <button class="nav-btn active" onclick="showSection('dashboard')">Главная</button>
+                <button class="nav-btn" onclick="showSection('guidelines')">Клинические рекомендации</button>
+                <button class="nav-btn" onclick="showSection('lab-tests')">Лабораторные исследования</button>
+                <button class="nav-btn" onclick="showSection('treatments')">Схемы лечения</button>
+            </div>
+        </div>
+        
+        <div class="content" id="content">
+            <!-- Dashboard -->
+            <div id="dashboard" class="section">
+                <h2>Добро пожаловать в справочник клинической эндокринологии</h2>
+                <p style="margin-bottom: 2rem; color: #666;">Современный справочник для врачей-эндокринологов с актуальными клиническими рекомендациями РФ</p>
+                
+                <div class="stats">
+                    <div class="stat-card">
+                        <div class="stat-number">5</div>
+                        <div>Клинических рекомендаций</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">12</div>
+                        <div>Лабораторных тестов</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">8</div>
+                        <div>Схем лечения</div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h3>📋 Последние клинические рекомендации</h3>
+                    <ul style="margin-left: 1.5rem; margin-top: 1rem;">
+                        <li>Сахарный диабет 2 типа у взрослых</li>
+                        <li>Сахарный диабет 1 типа у взрослых</li>
+                        <li>Заболевания щитовидной железы</li>
+                        <li>Остеопороз</li>
+                        <li>Ожирение</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Guidelines -->
+            <div id="guidelines" class="section" style="display: none;">
+                <h2>Клинические рекомендации</h2>
+                <input type="text" class="search" placeholder="Поиск рекомендаций..." onkeyup="filterGuidelines(this.value)">
+                
+                <div class="card guideline">
+                    <h3>Сахарный диабет 2 типа у взрослых</h3>
+                    <p>Рекомендации по диагностике, лечению и профилактике СД 2 типа</p>
+                    <div style="margin-top: 1rem;">
+                        <span class="chip">Уровень доказательности: A</span>
+                        <span class="chip">Обновлено: 2023-12-01</span>
+                    </div>
+                    <div style="margin-top: 1rem;">
+                        <h4>Критерии диагностики:</h4>
+                        <ul style="margin-left: 1.5rem;">
+                            <li>Глюкоза плазмы натощак ≥ 7,0 ммоль/л</li>
+                            <li>Глюкоза плазмы через 2 часа после нагрузки ≥ 11,1 ммоль/л</li>
+                            <li>HbA1c ≥ 6,5%</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="card guideline">
+                    <h3>Сахарный диабет 1 типа у взрослых</h3>
+                    <p>Рекомендации по ведению пациентов с СД 1 типа</p>
+                    <div style="margin-top: 1rem;">
+                        <span class="chip">Уровень доказательности: A</span>
+                        <span class="chip">Обновлено: 2023-11-15</span>
+                    </div>
+                </div>
+                
+                <div class="card guideline">
+                    <h3>Заболевания щитовидной железы</h3>
+                    <p>Диагностика и лечение заболеваний щитовидной железы</p>
+                    <div style="margin-top: 1rem;">
+                        <span class="chip">Уровень доказательности: A</span>
+                        <span class="chip">Обновлено: 2023-10-20</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Lab Tests -->
+            <div id="lab-tests" class="section" style="display: none;">
+                <h2>Лабораторные исследования</h2>
+                <input type="text" class="search" placeholder="Поиск лабораторных тестов..." onkeyup="filterLabTests(this.value)">
+                
+                <div class="card lab-test">
+                    <h3>Глюкоза плазмы натощак</h3>
+                    <p>Основной показатель углеводного обмена</p>
+                    <div style="margin-top: 1rem;">
+                        <span class="chip">Норма: 3,3-5,5 ммоль/л</span>
+                    </div>
+                    <div style="margin-top: 1rem;">
+                        <h4>Интерпретация:</h4>
+                        <p><strong>Повышение (> 6,1 ммоль/л):</strong> Сахарный диабет, нарушение толерантности к глюкозе</p>
+                        <p><strong>Снижение (< 3,3 ммоль/л):</strong> Гипогликемия, инсулинома</p>
+                    </div>
+                </div>
+                
+                <div class="card lab-test">
+                    <h3>HbA1c (Гликированный гемоглобин)</h3>
+                    <p>Показатель среднего уровня глюкозы за 2-3 месяца</p>
+                    <div style="margin-top: 1rem;">
+                        <span class="chip">Норма: 4,0-6,0%</span>
+                    </div>
+                </div>
+                
+                <div class="card lab-test">
+                    <h3>ТТГ (Тиреотропный гормон)</h3>
+                    <p>Основной скрининговый тест функции щитовидной железы</p>
+                    <div style="margin-top: 1rem;">
+                        <span class="chip">Норма: 0,4-4,0 мМЕ/л</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Treatments -->
+            <div id="treatments" class="section" style="display: none;">
+                <h2>Схемы лечения</h2>
+                <input type="text" class="search" placeholder="Поиск препаратов..." onkeyup="filterTreatments(this.value)">
+                
+                <div class="card treatment">
+                    <h3>Метформин</h3>
+                    <p>Препарат первой линии для лечения СД 2 типа</p>
+                    <div style="margin-top: 1rem;">
+                        <span class="chip">Дозировка: 500-2000 мг/сут</span>
+                    </div>
+                    <div style="margin-top: 1rem;">
+                        <h4>Противопоказания:</h4>
+                        <ul style="margin-left: 1.5rem;">
+                            <li>Тяжелая почечная недостаточность (СКФ < 30 мл/мин)</li>
+                            <li>Метаболический ацидоз</li>
+                            <li>Острая сердечная недостаточность</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="card treatment">
+                    <h3>Левотироксин (L-тироксин)</h3>
+                    <p>Заместительная терапия при гипотиреозе</p>
+                    <div style="margin-top: 1rem;">
+                        <span class="chip">Дозировка: 1,6-1,8 мкг/кг массы тела/сут</span>
+                    </div>
+                </div>
+                
+                <div class="card treatment">
+                    <h3>Инсулин</h3>
+                    <p>Заместительная терапия при СД 1 типа и тяжелом СД 2 типа</p>
+                    <div style="margin-top: 1rem;">
+                        <span class="chip">Дозировка: 0,5-1,0 ЕД/кг/сут</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function showSection(sectionName) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => section.style.display = 'none');
+            
+            // Show selected section
+            document.getElementById(sectionName).style.display = 'block';
+            
+            // Update active button
+            const buttons = document.querySelectorAll('.nav-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+        
+        function filterGuidelines(searchTerm) {
+            const cards = document.querySelectorAll('#guidelines .card');
+            cards.forEach(card => {
+                const text = card.textContent.toLowerCase();
+                if (text.includes(searchTerm.toLowerCase())) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+        
+        function filterLabTests(searchTerm) {
+            const cards = document.querySelectorAll('#lab-tests .card');
+            cards.forEach(card => {
+                const text = card.textContent.toLowerCase();
+                if (text.includes(searchTerm.toLowerCase())) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+        
+        function filterTreatments(searchTerm) {
+            const cards = document.querySelectorAll('#treatments .card');
+            cards.forEach(card => {
+                const text = card.textContent.toLowerCase();
+                if (text.includes(searchTerm.toLowerCase())) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
